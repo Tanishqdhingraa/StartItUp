@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Banner = () => {
   const navigate = useNavigate();
   return (
-    <div className="bg-black mt-9 text-lime-300 flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-12 rounded-2xl shadow-lg">
+    <div className="bg-black  text-lime-300 flex flex-col mt-28 md:flex-row items-center justify-between px-8 md:px-16 py-12 rounded-2xl shadow-lg">
       
       {/* Left Side: Photos */}
       <div className="grid grid-cols-2 gap-4 md:w-1/2">
