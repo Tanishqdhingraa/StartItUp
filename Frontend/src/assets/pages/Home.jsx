@@ -4,6 +4,7 @@ import Banner from "../components/Banner"
 import Ouraim from "../components/Ouraim"
 import Footer from "../components/Footer"
 import Topclients from "../components/Topclients"
+import Ourservices from '../components/Ourservices'
 
 
 
@@ -12,7 +13,7 @@ const Home = () => {
     <div>
       <Navbar/>
       <Banner/>
-      
+      <Ourservices/>
       <Topclients/>
       <Ouraim/>
 

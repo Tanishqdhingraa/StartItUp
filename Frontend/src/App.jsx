@@ -8,6 +8,10 @@ import Publish from "./assets/pages/Publish"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './assets/pages/Login'
 import Signup from './assets/pages/Signup'
+import Publisherform from './assets/pages/Publisherform'
+import Prform from './assets/pages/Prform'
+import Investorform from './assets/pages/Investorform'
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -18,7 +22,10 @@ const App = () => {
       <Route path="/pr-team" element={<Prteam />} />
       <Route path="/publish" element={< Publish/>} />
        <Route path="/login" element={< Login/>} /> 
-       <Route path="/signup" element={< Signup/>} /> 
+       <Route path="/signup" element={< Signup/>} />
+       <Route path="/investors-form" element={<Investorform/>} />
+       <Route path="/publish-form" element={< Publisherform/>} /> 
+       <Route path="pr-team-form" element={<  Prform/>} /> 
     </Routes>
     </BrowserRouter>
   )

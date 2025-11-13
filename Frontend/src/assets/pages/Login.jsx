@@ -1,7 +1,7 @@
 
 import React from "react";
 import Navbar from "../components/Navbar";
-import video from "../components/video.mp4"; // ✅ must include extension
+import video from "./video.mp4"
 
 const Login = () => {
   return (
@@ -9,14 +9,8 @@ const Login = () => {
       <Navbar />
       <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
         {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute w-full h-full object-cover"
-        >
-          <source src={video} type="video/mp4" /> {/* ✅ use imported variable */}
+        <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover">
+          <source src={video} type="video/mp4" />
         </video>
 
         {/* Overlay */}
