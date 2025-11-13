@@ -31,7 +31,7 @@ const Signup = () => {
           alt="StatItUp Logo"
           className="w-12 h-12 mr-3"
         />
-        <h1 className="text-3xl font-extrabold text-lime-400">StatItUp</h1>
+        <h1 className="text-3xl font-extrabold text-lime-400">StartItUp</h1>
       </div>
 
       {/* Signup Card */}

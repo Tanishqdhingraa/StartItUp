@@ -17,7 +17,7 @@ const Footer = () => {
               alt="StatItUp Logo"
               className="w-10 h-10 mr-3"
             />
-            <h2 className="text-2xl font-extrabold text-lime-400">StatItUp</h2>
+            <h2 className="text-2xl font-extrabold text-lime-400">StartItUp</h2>
           </div>
           <p className="text-lime-200 text-sm max-w-xs">
             Empowering brands and influencers to collaborate, grow, and create authentic digital connections together.
@@ -40,12 +40,12 @@ const Footer = () => {
             >
               Investors
             </li>
-            <li
-              onClick={() => navigate("/ouraim")}
+            {/* <li
+              onClick={() => navigate("/our-aim")}
               className="cursor-pointer hover:text-lime-400 transition-colors duration-200"
             >
               Our Aim
-            </li>
+            </li> */}
             <li
               onClick={() => navigate("/pr-team")}
               className="cursor-pointer hover:text-lime-400 transition-colors duration-200"

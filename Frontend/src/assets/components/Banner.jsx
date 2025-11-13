@@ -27,7 +27,7 @@ const Banner = () => {
       {/* Right Side: Description */}
       <div className="md:w-1/2 mt-8 md:mt-0 md:ml-12 text-center md:text-left">
         <h1 className="text-4xl font-extrabold mb-4">
-          Welcome to <span className="text-lime-400">StatItUp</span>
+          Welcome to <span className="text-lime-400">StartItUp</span>
         </h1>
         <p className="text-lg mb-6 text-white">
           A platform where <span className="font-semibold text-lime-400">big brands</span> connect

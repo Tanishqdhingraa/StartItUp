@@ -1,22 +1,33 @@
-
 import React from "react";
 import Navbar from "../components/Navbar";
-import video from "./video.mp4"
+// import video from "./video.mp4";
 
 const Login = () => {
   return (
     <>
       <Navbar />
       <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Video */}
-        <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover">
+
+        {/* Background Image */}
+        <img
+          src="https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg"   // <-- Replace with your image URL or local image
+          alt="Background"
+          className="absolute w-full h-full object-cover"
+        />
+
+        {/* Background Video
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute w-full h-full object-cover opacity-50"
+        >
           <source src={video} type="video/mp4" />
-        </video>
+        </video> */}
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-
-        
 
         {/* Login Card */}
         <div className="relative z-10 bg-black bg-opacity-60 backdrop-blur-md p-10 rounded-2xl shadow-lg w-[90%] max-w-md border border-lime-300">
