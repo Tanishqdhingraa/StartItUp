@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 
 function Publisherform() {
+  // ---------------- Form States ----------------
+  const [name, setName] = useState("");
+  const [handles, setHandles] = useState("");
+  const [contentType, setContentType] = useState("");
+
+  // ---------------- Event Listener ----------------
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name,
+      handles,
+      contentType,
+    };
+
+    console.log("FORM SUBMITTED:", formData);
+
+    alert("Form submitted successfully!");
+  };
+
   return (
     <>
       <Navbar />
@@ -23,7 +43,8 @@ function Publisherform() {
             Influencer Publisher Form ⭐
           </h2>
 
-          <form className="space-y-6">
+          {/* --------------- FORM START --------------- */}
+          <form className="space-y-6" onSubmit={handleSubmit}>
 
             {/* Influencer Name */}
             <div>
@@ -33,6 +54,8 @@ function Publisherform() {
               <input
                 type="text"
                 placeholder="Enter your full name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg bg-black text-lime-300 border border-lime-300
                 focus:outline-none focus:ring-2 focus:ring-lime-300"
                 required
@@ -47,6 +70,8 @@ function Publisherform() {
               <input
                 type="text"
                 placeholder="Instagram / YouTube / TikTok / X etc."
+                value={handles}
+                onChange={(e) => setHandles(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg bg-black text-lime-300 border border-lime-300
                 focus:outline-none focus:ring-2 focus:ring-lime-300"
                 required
@@ -59,6 +84,8 @@ function Publisherform() {
                 Type of Content You Create
               </label>
               <select
+                value={contentType}
+                onChange={(e) => setContentType(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg bg-black text-lime-300 border border-lime-300
                 focus:outline-none focus:ring-2 focus:ring-lime-300"
                 required
@@ -83,6 +110,7 @@ function Publisherform() {
               Submit Form
             </button>
           </form>
+          {/* --------------- FORM END --------------- */}
         </div>
       </div>
     </>

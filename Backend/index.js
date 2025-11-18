@@ -1,9 +1,13 @@
 require('dotenv').config()
-const express = require('express')
-const mongoose = require('mongoose')
+import express from ('express')
+import mongoose from ('mongoose')
 
-const app = express()
-const port = process.env.PORT || 3000
+import app from express()
+import port from process.env.PORT || 3000
+
+import publisherRoutes from "./routes/publisherRoutes.js";
+app.use("/publisher", publisherRoutes);
+
 
 app.use(express.json())
 
