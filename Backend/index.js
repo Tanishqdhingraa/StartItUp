@@ -1,24 +1,30 @@
-require('dotenv').config()
-import express from ('express')
-import mongoose from ('mongoose')
+import dotenv from "dotenv";
+dotenv.config();
 
-import app from express()
-import port from process.env.PORT || 3000
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
 
 import publisherRoutes from "./routes/publisherRoutes.js";
+import investorRoutes from "./routes/investorRoutes.js";
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use(cors());
+app.use(express.json()); // ⬅ MUST come BEFORE routes
+
+// Routes
 app.use("/publisher", publisherRoutes);
+app.use("/investors", investorRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
 
-app.use(express.json())
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.log(err));
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB connected successfully"))
-  .catch(err => console.error("❌ MongoDB connection failed:", err))
-
-app.listen(port, () => {
-  console.log(`🚀 Server running at http://localhost:${port}`)
-})
+app.listen(port, () => console.log(`Server running on port ${port}`));
