@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Prform = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // 🚀 Prevent page reload
-    navigate("/publish"); // 🚀 Now redirect works every time
+  const [formData, setFormData] = useState({
+    companyName: "",
+    serviceType: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("/api/Prteam", formData);
+      navigate("/publish"); // redirect after submission
+    } catch (error) {
+      console.error("Submission Error:", error);
+      alert("Something went wrong!");
+    }
   };
 
   return (
@@ -17,7 +37,6 @@ const Prform = () => {
       <div className="min-h-screen bg-black text-lime-300 flex items-center justify-center px-4 py-10">
         <div className="bg-black bg-opacity-60 backdrop-blur-xl border border-lime-300 p-8 rounded-2xl shadow-lg max-w-lg w-full">
 
-          {/* Logo + Title */}
           <div className="flex items-center mb-6">
             <img
               src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
@@ -31,8 +50,8 @@ const Prform = () => {
             PR Team Registration 📢
           </h2>
 
-          {/* FORM START */}
           <form className="space-y-6" onSubmit={handleSubmit}>
+            
             {/* Company Name */}
             <div>
               <label className="block text-lime-300 mb-2 font-medium">
@@ -40,32 +59,38 @@ const Prform = () => {
               </label>
               <input
                 type="text"
+                name="companyName"
                 placeholder="Enter your company name"
                 className="w-full px-4 py-2 rounded-lg bg-black text-lime-300 border border-lime-300 
                 focus:outline-none focus:ring-2 focus:ring-lime-300"
+                value={formData.companyName}
+                onChange={handleChange}
                 required
               />
             </div>
 
-            {/* Field */}
+            {/* Service / Field */}
             <div>
               <label className="block text-lime-300 mb-2 font-medium">
                 What Does Your Team Handle?
               </label>
               <select
+                name="serviceType"
                 className="w-full px-4 py-2 rounded-lg bg-black text-lime-300 border border-lime-300 
                 focus:outline-none focus:ring-2 focus:ring-lime-300"
+                value={formData.serviceType}
+                onChange={handleChange}
                 required
               >
                 <option value="">Select your field</option>
-                <option value="social-media">Social Media Management</option>
-                <option value="pr-handling">PR Handling</option>
-                <option value="brand-marketing">Brand Marketing</option>
-                <option value="campaigns">Campaign Management</option>
-                <option value="advertising">Advertising Services</option>
-                <option value="celebrity-mgmt">Celebrity Management</option>
-                <option value="content-creation">Content Creation & Editing</option>
-                <option value="public-relations">Public Relations</option>
+                <option value="Social Media Management">Social Media Management</option>
+                <option value="PR Handling">PR Handling</option>
+                <option value="Brand Marketing">Brand Marketing</option>
+                <option value="Campaign Management">Campaign Management</option>
+                <option value="Advertising Services">Advertising Services</option>
+                <option value="Celebrity Management">Celebrity Management</option>
+                <option value="Content Creation">Content Creation & Editing</option>
+                <option value="Public Relations">Public Relations</option>
               </select>
             </div>
 
@@ -77,7 +102,7 @@ const Prform = () => {
               Submit Form
             </button>
           </form>
-          {/* FORM END */}
+          
         </div>
       </div>
     </>

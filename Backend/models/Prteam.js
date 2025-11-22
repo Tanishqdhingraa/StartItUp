@@ -1,18 +1,11 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
+const PrTeamSchema = new mongoose.Schema(
+  {
+    companyName: { type: String, required: true },
+    serviceType: { type: String, required: true }
+  },
+  { timestamps: true }
+);
 
-const Sign = new mongoose.Schema({
-    emailaddress:{
-        type: String,
-        require:true,
-        unique:true
-    },
-    password:{
-        type:String,
-        require:true
-    }
-
-})
-const sign = new mongoose.model('sign',Sign);
-
-module.exports= sign;
+export default mongoose.model("PrTeam", PrTeamSchema);

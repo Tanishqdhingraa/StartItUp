@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Invest = () => {
   const [investors, setInvestors] = useState([]);
@@ -10,7 +11,7 @@ const Invest = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/investors");
+        const res = await axios.get("api/investors");
         setInvestors(res.data);
         setLoading(false);
       } catch (err) {
@@ -26,12 +27,12 @@ const Invest = () => {
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-black text-lime-300 p-10 mt-9" >
+      <div className="min-h-screen bg-black text-lime-300 rounded-4xl p-10 mt-28" >
         <h1 className="text-4xl font-bold text-center mb-10">
           Investor Submissions 📊
         </h1>
 
-        {loading ? (
+        {loading ? ( 
           <p className="text-center text-xl">Loading...</p>
         ) : investors.length === 0 ? (
           <p className="text-center text-xl">No submissions yet.</p>
@@ -60,6 +61,7 @@ const Invest = () => {
           </div>
         )}
       </div>
+      <Footer/>
     </>
   );
 };

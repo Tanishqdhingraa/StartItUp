@@ -3,20 +3,27 @@ dotenv.config();
 
 import express from "express";
 import mongoose from "mongoose";
+
 import cors from "cors";
 
+
+import PrTeamRoutes from "./routes/PrTeamRoutes.js";
 import publisherRoutes from "./routes/publisherRoutes.js";
-import investorRoutes from "./routes/investorRoutes.js";
+
+
+// import investorRoutes from "./routes/investorRoutes.js";
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT ;
 
 app.use(cors());
 app.use(express.json()); // ⬅ MUST come BEFORE routes
 
 // Routes
 app.use("/publisher", publisherRoutes);
-app.use("/investors", investorRoutes);
+// app.use("api/investors", investorRoutes);
+// API ROUTE
+app.use("/api/Prteam", PrTeamRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World");

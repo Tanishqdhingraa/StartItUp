@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Signup = () => {
 
   return ( <>
   <Navbar/>
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center text-lime-300 px-4">
+    <div className="min-h-screen bg-black mt-28 rounded-4xl flex flex-col items-center justify-center text-lime-300 px-4">
       {/* Logo */}
       <div className="flex items-center mb-6">
         <img
@@ -103,6 +104,7 @@ const Signup = () => {
         </p>
       </form>
     </div>
+    <Footer/>
     </>
   );
 };

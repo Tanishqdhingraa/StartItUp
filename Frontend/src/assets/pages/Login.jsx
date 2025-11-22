@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 // import video from "./video.mp4";
-
+import Footer from "../components/Footer"
 const Login = () => {
   return (
     <>
       <Navbar />
-      <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-screen flex items-center mt-28 rounded-4xl justify-center overflow-hidden">
 
         {/* Background Image */}
         <img
@@ -79,6 +79,7 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
