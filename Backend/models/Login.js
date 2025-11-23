@@ -1,18 +1,17 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-
-const Login = new mongoose.Schema({
-    emailaddress:{
+const LoginSchema = new mongoose.Schema({
+    email: {
         type: String,
-        require:true,
-        unique:true
+        required: true,
+        unique: true
     },
-    password:{
-        type:String,
-        require:true
+    password: {
+        type: String,
+        required: true
     }
+});
 
-})
-const login = new mongoose.model('login',Login);
+const Login = mongoose.model("Login", LoginSchema);
 
-module.exports= login;
+export default Login;

@@ -5,9 +5,9 @@ import { addPublisher, getAllPublishers } from "../controllers/publisherControll
 const router = express.Router();
 
 // Add Single / Multiple publishers
-router.post("/add", addPublisher);
+router.post("/publisher/add", addPublisher);
 
 // Fetch All
-router.get("/all", getAllPublishers);
+router.get("/publisher/all", getAllPublishers);
 
 export default router;
