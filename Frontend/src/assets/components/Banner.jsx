@@ -1,14 +1,13 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
   const navigate = useNavigate();
   return (
-    <div className="bg-black  text-lime-300 flex flex-col mt-28 md:flex-row items-center justify-between px-8 md:px-16 py-12 rounded-2xl shadow-lg">
+    <div className="bg-black text-lime-300 mt-28 flex flex-col-reverse md:flex-row items-center justify-between px-8 md:px-16 py-12 rounded-2xl shadow-lg">
       
       {/* Left Side: Photos */}
-      <div className="grid grid-cols-2 gap-4 md:w-1/2">
+      <div className="grid grid-cols-2 gap-4 md:w-1/2 ">
         {[
           "https://i.pinimg.com/736x/27/f7/c3/27f7c3750d25b7b25c685692e13a031a.jpg",
           "https://i.pinimg.com/736x/bb/1f/c0/bb1fc0411b225bfcbcd258349f23f76c.jpg",

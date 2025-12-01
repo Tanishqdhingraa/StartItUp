@@ -3,3 +3,29 @@
 body{
     background-color: #4D7C0F;
 }
+
+@keyframes floating {
+    0% {
+        transform: translate(10vw, 10vh);
+    }
+
+    25% {
+        transform: translate(70vw, 20vh);
+    }
+
+    50% {
+        transform: translate(40vw, 70vh);
+    }
+
+    75% {
+        transform: translate(80vw, 60vh);
+    }
+
+    100% {
+        transform: translate(10vw, 10vh);
+    }
+}
+
+.animate-floating {
+    animation: floating 12s ease-in-out infinite alternate;
+}

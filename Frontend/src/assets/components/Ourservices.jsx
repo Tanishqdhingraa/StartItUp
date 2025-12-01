@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Briefcase, UserPlus, Megaphone, Handshake } from "lucide-react";
+import { Briefcase, UserPlus, Megaphone } from "lucide-react";
 
 const Ourservices = () => {
   const navigate = useNavigate();
@@ -8,55 +8,56 @@ const Ourservices = () => {
   const services = [
     {
       title: "For Investors",
-      desc: "Explore promising influencer-backed startups and invest in the next wave of marketing innovation.",
-      icon: <Briefcase size={40} className="text-lime-400 mb-3" />,
+      desc: "Explore influencer-backed startups and invest in emerging innovations.",
+      icon: <Briefcase size={40} className="text-lime-600 mb-3" />,
       path: "/investors-form",
     },
     {
       title: "Publish as Influencer",
-      desc: "Showcase your social media presence and attract leading brands looking for collaboration.",
-      icon: <UserPlus size={40} className="text-lime-400 mb-3" />,
+      desc: "Showcase your social presence and attract top brands for collaboration.",
+      icon: <UserPlus size={40} className="text-lime-600 mb-3" />,
       path: "/publish-form",
     },
     {
       title: "PR Team",
-      desc: "Access powerful analytics tools and connect with influencers who align with your brand’s story.",
-      icon: <Megaphone size={40} className="text-lime-400 mb-3" />,
+      desc: "Gain analytics access and connect with influencers aligned with your brand.",
+      icon: <Megaphone size={40} className="text-lime-600 mb-3" />,
       path: "/pr-team-form",
     },
-    // {
-    //   title: "Brand Collaboration",
-    //   desc: "Partner with authentic creators to reach audiences that truly matter to your business.",
-    //   icon: <Handshake size={40} className="text-lime-400 mb-3" />,
-    //   path: "/brands",
-    // },
   ];
 
   return (
-    <div className="bg-black mt-10 rounded-3xl text-lime-300 min-h-screen flex flex-col items-center px-6 md:px-20 py-20">
-      <h2 className="text-5xl font-extrabold text-lime-400 mb-12 text-center">
-        Our <span className="text-white">Services</span>
-      </h2>
+    <section className="bg-black text-lime-300 px-8 md:px-16 py-16 mt-10 rounded-2xl shadow-lg">
+      
+      {/* Section Title */}
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-extrabold mb-3">
+          Our <span className="text-lime-400">Services</span>
+        </h2>
+        <p className="text-lime-200 text-lg max-w-2xl mx-auto">
+          We offer dedicated platforms for investors, influencers, and PR teams to grow together.
+        </p>
+      </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-6xl">
+      {/* Services Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-center">
         {services.map((service, index) => (
           <div
             key={index}
             onClick={() => navigate(service.path)}
-            className="bg-black border border-lime-400 rounded-2xl p-8 text-center shadow-lg cursor-pointer hover:scale-105 hover:shadow-lime-400/30 transition-all duration-300"
+            className="flex flex-col items-center justify-center bg-lime-300 p-6 rounded-xl hover:scale-105 transition-transform duration-200 shadow-md cursor-pointer"
           >
             {service.icon}
-            <h3 className="text-2xl font-semibold text-lime-400 mb-3">
-              {service.title}
-            </h3>
-            <p className="text-lime-200 text-sm mb-5">{service.desc}</p>
-            <button className="bg-lime-300 text-black font-semibold px-5 py-2 rounded-full hover:bg-white transition duration-300">
+            <h3 className="text-black font-bold text-xl mb-2">{service.title}</h3>
+            <p className="text-black text-sm text-center mb-4 px-2">{service.desc}</p>
+
+            <button className="bg-black text-lime-300 px-4 py-2 rounded-full font-semibold hover:bg-gray-900 transition">
               Explore
             </button>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
