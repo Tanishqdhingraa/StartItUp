@@ -11,6 +11,11 @@ import Signup from './assets/pages/Signup'
 import Publisherform from './assets/pages/Publisherform'
 import Prform from './assets/pages/Prform'
 import Investorform from './assets/pages/Investorform'
+import ChatBot from './assets/components/ChatBot'
+import BotChat from './assets/components/botchat'
+
+
+
 
 const App = () => {
   return (
@@ -22,6 +27,8 @@ const App = () => {
       <Route path="/pr-team" element={<Prteam />} />
       <Route path="/publish" element={< Publish/>} />
        <Route path="/login" element={< Login/>} /> 
+       <Route path="/bot" element={< BotChat/>} /> 
+
        <Route path="/signup" element={< Signup/>} />
        <Route path="/investors-form" element={<Investorform/>} />
        <Route path="/publish-form" element={< Publisherform/>} /> 
