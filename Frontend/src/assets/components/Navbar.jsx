@@ -17,7 +17,7 @@ const Navbar = () => {
       {/* Logo */}
       <div
         className="flex items-center space-x-2 text-2xl font-bold tracking-wide cursor-pointer"
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/signup")}
       >
         <img
           src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
