@@ -11,7 +11,7 @@ const Prteam = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/api/Prteam"); // ensure correct API route
+        const res = await axios.get("api/Prteam"); // ensure correct API route
         setPrteam(res.data);
         setLoading(false);
       } catch (err) {

@@ -31,8 +31,8 @@ app.use("/api/signup", signroutes);
 
 // Other routes
 app.use("/api/publisher", publisherRoutes);
-app.use("/api/prteam", PrTeamRoutes);
-app.use("/api/investors", investorRoutes);
+app.use("api", PrTeamRoutes);
+app.use("api/investors", investorRoutes);
 
 // Root test route
 app.get("/", (req, res) => {
